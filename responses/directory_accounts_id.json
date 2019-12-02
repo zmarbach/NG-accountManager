@@ -1,0 +1,16 @@
+{
+  "id": 3,
+  "name": "Skyler Tweedie",
+  "email": "skylertweedie@gmail.com",
+  "isEmployee": true,
+  "departmentId": 1,
+  "phoneNumbers": [{
+      "number": "9283989283",
+      "type": "mobile"
+    },
+    {
+      "number": "9821392392",
+      "type": "work"
+    }
+  ]
+}

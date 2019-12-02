@@ -1,0 +1,28 @@
+{
+  "html": {
+    "indent_with_tabs": true,
+    "indent_char": " ",
+    "indent_size": 2
+  },
+  "ts": {
+    "indent_with_tabs": true,
+    "indent_char": " ",
+    "indent_size": 2
+  },
+  "json": {
+    "indent_with_tabs": true,
+    "indent_char": " ",
+    "indent_size": 2,
+    "brace_style": "collapse-preserve-inline"
+  },
+  "js": {
+    "indent_with_tabs": true,
+    "indent_char": " ",
+    "indent_size": 2
+  },
+  "css": {
+    "indent_with_tabs": true,
+    "indent_char": " ",
+    "indent_size": 2
+  }
+}
