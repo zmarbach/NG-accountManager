@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { AccountsService } from '../../../services';
+import { Account } from '../../../models';
 
 @Component({
   selector: 'am-account-editor',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountEditorComponent implements OnInit {
 
-  constructor() { }
+  private accountId: number;
+  account: Account;
+
+  constructor(
+    //have to have this ActivatedRoute in order to access parameters in URL
+    private route: ActivatedRoute,
+    private accountsService: AccountsService
+    ) { }
 
   ngOnInit() {
+    console.warn('dont use snapshot')
+    const params = this.route.snapshot.params;
+
+    //the + converts the string parameter in the URL into a number
+    this.accountId = +params.accountId;
+    this.account = this.accountsService.get(this.accountId);
   }
 
 }

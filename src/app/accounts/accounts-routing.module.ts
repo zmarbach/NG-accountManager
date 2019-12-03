@@ -6,7 +6,8 @@ import * as components from './components';
 //this shows what views to load when going to specified paths (webpage)
 const routes: Routes = [
   { path:'list', component: components.AccountListComponent },
-  {  path: 'edit', component: components.AccountEditorComponent},
+  //accountId has to be the same variable name on the component itself and the corresponding html file
+  {  path: ':accountId', component: components.AccountEditorComponent},
   { path: '', redirectTo: 'list', pathMatch: 'full' }
 ];
 

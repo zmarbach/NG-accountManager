@@ -5,13 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RepeatPipe } from './repeat.pipe';
 import { CommonModule } from '@angular/common';
-import { AccountListComponent } from './account-list/account-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RepeatPipe,
-    AccountListComponent
+    RepeatPipe
   ],
   imports: [
     BrowserModule,
@@ -21,4 +19,6 @@ import { AccountListComponent } from './account-list/account-list.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
+//this routes to AccountsModule (see loadChildren function on app-routing.module.ts)
 export class AppModule { }

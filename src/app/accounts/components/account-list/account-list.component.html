@@ -1,1 +1,33 @@
-<p>account-list works!</p>
+<div class="container mt-4">
+    <div class="clearfix"></div>
+    <div>
+      <table class="table table-striped table-condensed">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Is Employee</th>
+            <th>&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor =" let account of accounts">
+            <td>
+              <a>
+                {{account.name}}
+              </a>
+            </td>
+            <td>{{account.email}}</td>
+            <td>{{account.isEmployee ? "Y" : "N"}}</td>
+            <td class="text-right">
+              <button class="btn btn-sm btn-danger">
+                X
+              </button>
+              <!-- http://localhost:4200/accounts/list - current url. This says go up 2 to get to /accounts/, then add the id of the current account (because in ngFor) -->
+              <a [routerLink] ="['../', account.id]">Edit</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
