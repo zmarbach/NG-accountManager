@@ -11,14 +11,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor =" let account of accounts">
           <td>
             <a>
-              [ ACCOUNT_NAME ]
+              {{account.name}}
             </a>
           </td>
-          <td>[ ACCOUNT_EMAIL ]</td>
-          <td>[ ACCOUNT_IS_DEMPLOYEE ]</td>
+          <td>{{account.email}}</td>
+          <td>{{account.isEmployee ? "Y" : "N"}}</td>
           <td class="text-right">
             <button class="btn btn-sm btn-danger">
               X

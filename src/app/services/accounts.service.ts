@@ -16,18 +16,18 @@ export class AccountsService {
     }),
     new Account({
       id: 2,
-      name: 'Skyler',
-      email: 'skyler.tweedie@improving.com',
+      name: 'Zach',
+      email: 'fake@email.com',
       isEmployee: true,
-      departmentId: 0,
+      departmentId: 2,
       phoneNumbers: []
     }),
     new Account({
       id: 3,
       name: 'Skyler',
-      email: 'skyler.tweedie@improving.com',
-      isEmployee: true,
-      departmentId: 0,
+      email: 'saggy_bob@hotmail.com',
+      isEmployee: false,
+      departmentId: 3,
       phoneNumbers: []
     })
   ];
@@ -37,9 +37,9 @@ export class AccountsService {
   }
 
   get(id: number): Account {
-    for (let ii = 0, len = this.accounts.length; ii < len; ii++) {
-      if (this.accounts[ii].id === id) {
-        return this.accounts[ii];
+    for (let i = 0; i< this.accounts.length; i++) {
+      if (this.accounts[i].id === id) {
+        return this.accounts[i];
       }
     }
 

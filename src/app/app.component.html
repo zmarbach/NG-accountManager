@@ -1,1 +1,7 @@
-<am-account-list></am-account-list>
+<!-- this tells Angular to use the routing we defined to determine which view to show (based on the url path)-->
+
+<!--use routerLink when needing to navigate to different part within same app (doesnt cause page refresh, just uses Angular's routing) -->
+<a routerLink="accounts/list">List</a>
+<a routerLink="accounts/edit">Edit</a>
+
+<router-outlet></router-outlet>
