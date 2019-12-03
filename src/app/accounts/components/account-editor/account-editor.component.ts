@@ -13,6 +13,9 @@ export class AccountEditorComponent implements OnInit {
   private accountId: number;
   account: Account;
 
+  firstName: string;
+  lastName: string;
+
   constructor(
     //have to have this ActivatedRoute in order to access parameters in URL
     private route: ActivatedRoute,
@@ -26,6 +29,11 @@ export class AccountEditorComponent implements OnInit {
     //the + converts the string parameter in the URL into a number
     this.accountId = +params.accountId;
     this.account = this.accountsService.get(this.accountId);
+  }
+
+  save() {
+    console.log(this.firstName);
+    // save account
   }
 
 }

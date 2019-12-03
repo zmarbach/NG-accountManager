@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { RepeatPipe } from './repeat.pipe';
 import { CommonModule } from '@angular/common';
 
+//any of the declared components can use the imports below
 @NgModule({
   declarations: [
     AppComponent,
