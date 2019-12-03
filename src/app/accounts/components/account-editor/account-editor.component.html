@@ -1,12 +1,10 @@
 <p>account-editor works!</p>
-<h5>Account Id : {{accountId}}</h5>
-<code> {{account | json}} </code>
-<br/>
+<h3>Times Clicked:</h3>{{timesClicked}}
 
-<label>First Name</label>
-<!--firstName must be same spelling as variable on component-->
-<input type= "text" [(ngModel)] = "firstName" />
-{{firstName}}
-<br/>
+<!-- this links two items together...just like ngModel 
+myAccount refers to variable on account-form (child) and "account" refers to variable on account-editor (parent) -->
+<!-- pass it through via attribute-->
 
-<button (click) = "save()">Save</button>
+<!-- when event is fired in account-form(child), account-editor (parent) will call a function ... showTimesClicked. Will only have ONE parent-->
+<am-account-form [myAccount] = "account" (myEvent) = "showTimesClicked($event)"></am-account-form>
+

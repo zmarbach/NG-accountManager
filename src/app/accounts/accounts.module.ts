@@ -3,7 +3,7 @@
 //this is our feature module
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AccountsRoutingModule } from './accounts-routing.module';
 
@@ -13,12 +13,14 @@ import * as components from './components';
 @NgModule({
   declarations: [
     components.AccountListComponent,
-    components.AccountEditorComponent
+    components.AccountEditorComponent,
+    components.AccountFormComponent
   ],
   imports: [
     CommonModule,
     AccountsRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AccountsModule { }

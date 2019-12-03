@@ -12,9 +12,7 @@ export class AccountEditorComponent implements OnInit {
 
   private accountId: number;
   account: Account;
-
-  firstName: string;
-  lastName: string;
+  timesClicked = 0;
 
   constructor(
     //have to have this ActivatedRoute in order to access parameters in URL
@@ -31,9 +29,9 @@ export class AccountEditorComponent implements OnInit {
     this.account = this.accountsService.get(this.accountId);
   }
 
-  save() {
-    console.log(this.firstName);
-    // save account
+  showTimesClicked(timesClicked: number){
+    this.timesClicked = timesClicked; 
   }
+
 
 }
