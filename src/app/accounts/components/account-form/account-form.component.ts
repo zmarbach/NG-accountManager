@@ -14,6 +14,7 @@ export class AccountFormComponent implements OnInit {
 
   //define event as output so can pass it OUT TO the parent component
   @Output() myEvent = new EventEmitter<number>();
+  @Output() updateEvent = new EventEmitter<Account>();
 
   private timesClicked = 0;
 
@@ -28,7 +29,8 @@ export class AccountFormComponent implements OnInit {
     this.accountForm = this.formBuilder.group({
       //initial value of form input will be the first value, then add any validators you want (need .ng-valid class in CSS)
       name:[ this.myAccount.name, Validators.required ],
-      email: [ this.myAccount.email, Validators.compose([Validators.email, Validators.required]) ]
+      email: [ this.myAccount.email, Validators.compose([Validators.email, Validators.required]) ],
+      isEmployee: [ this.myAccount.isEmployee, Validators.required]
     })
   }
 
@@ -38,17 +40,24 @@ export class AccountFormComponent implements OnInit {
     this.myEvent.emit(this.timesClicked);
   }
 
+  updateClicked(){
+    this.updateEvent.emit(this.myAccount);
+  }
+
   reset(){
     this.accountForm.patchValue({
       name: '',
-      email: ''
+      email: '',
+      isEmployee: false
     });
   }
 
   cancel(){
     this.accountForm.patchValue({
       name: this.myAccount.name,
-      email: this.myAccount.email
+      email: this.myAccount.email,
+      isEmployee: this.myAccount.isEmployee
+
     });
   }
 
@@ -62,6 +71,7 @@ export class AccountFormComponent implements OnInit {
     const value = this.accountForm.value;
     this.myAccount.name = value.name;
     this.myAccount.email = value.email;
+    this.myAccount.isEmployee = value.isEmployee;
   }
 
 }

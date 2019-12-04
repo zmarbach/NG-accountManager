@@ -33,5 +33,7 @@ export class AccountEditorComponent implements OnInit {
     this.timesClicked = timesClicked; 
   }
 
-
+  updateAccount(account: Account){
+    this.accountsService.update(account);
+  }
 }

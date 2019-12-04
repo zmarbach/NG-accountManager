@@ -6,5 +6,5 @@ myAccount refers to variable on account-form (child) and "account" refers to var
 <!-- pass it through via attribute-->
 
 <!-- when event is fired in account-form(child), account-editor (parent) will call a function ... showTimesClicked. Will only have ONE parent-->
-<am-account-form [myAccount] = "account" (myEvent) = "showTimesClicked($event)"></am-account-form>
+<am-account-form [myAccount] = "account" (myEvent) = "showTimesClicked($event)" (updateEvent) = "updateAccount($event)"></am-account-form>
 

@@ -46,6 +46,10 @@ export class AccountsService {
     return null;
   }
 
+  update(account: Account) {
+    console.log(account);
+  }
+
   delete(account: Account) {
     return null;
   }
